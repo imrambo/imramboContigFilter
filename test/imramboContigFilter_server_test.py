@@ -102,4 +102,12 @@ class imramboContigFilterTest(unittest.TestCase):
                                               {'workspace_name': self.wsName,
                                                'assembly_input_ref': '1/fake/3',
                                                'min_length': 'ten'})
-
+    def test_run_imramboContigFilter_max(self):
+        ref = "79/16/1"
+        result = self.serviceImpl.run_imramboContigFilter_max(self.ctx, {
+            'workspace_name': self.wsName,
+            'assembly_ref': ref,
+            'min_length': 100,
+            'max_length': 1000000
+        })
+        print(result)

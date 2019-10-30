@@ -30,7 +30,7 @@ This sample module contains one small method that filters contigs.
     ######################################### noqa
     VERSION = "0.0.1"
     GIT_URL = "https://github.com/imrambo/imramboContigFilter.git"
-    GIT_COMMIT_HASH = "20eb8527d9d1797d96e582a0ad3c31b5e3e473c2"
+    GIT_COMMIT_HASH = "bc6f2858837e3603bdb9e4d38a6c67f95c37260a"
 
     #BEGIN_CLASS_HEADER
     # Class variables and functions can be defined in this block
@@ -162,13 +162,11 @@ This sample module contains one small method that filters contigs.
         print(params['min_length'], params['max_length'], params['assembly_ref'])
         output = {}
         #END run_imramboContigFilter_max
-
+        return [output]
         # At some point might do deeper type checking...
         if not isinstance(output, dict):
             raise ValueError('Method run_imramboContigFilter_max return value ' +
                              'output is not type dict as required.')
-        # return the results
-        return [output]
 
     def run_imramboContigFilter_min(self, ctx, params):
         """
